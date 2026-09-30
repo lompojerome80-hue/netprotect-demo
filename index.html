@@ -148,6 +148,18 @@
     backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
   .legal p{margin:0;color:#8d97ad;font-size:12.5px;line-height:1.7}
 
+  /* galerie captures */
+  .shots{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:620px){.shots{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:1000px){.shots{grid-template-columns:repeat(4,1fr)}}
+  .shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border);
+    background:rgba(10,14,30,.6);transition:transform .18s ease,border-color .18s ease}
+  .shot:hover{transform:translateY(-4px);border-color:rgba(77,124,255,.45)}
+  .shot img{display:block;width:100%;height:auto;aspect-ratio:1080/2420;object-fit:cover;object-position:top center}
+  .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:12.5px;font-weight:600;color:#fff;
+    background:linear-gradient(180deg,rgba(5,8,20,0),rgba(5,8,20,.88))}
+  .shot figcaption span{display:block;font-weight:400;font-size:11.5px;color:#a9b3c6}
+
   footer{margin-top:50px;border-top:1px solid var(--border);padding:32px 0 38px;text-align:center;color:var(--muted);font-size:13px}
   footer .fcta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:22px}
 
@@ -192,7 +204,7 @@
 <main id="top">
   <div class="wrap">
     <section class="hero">
-      <span class="pill"><span class="dotp"></span>Application Android &middot; Licence par telephone</span>
+      <span class="pill"><span class="dotp"></span>Application Android &middot; licence &agrave; vie par telephone</span>
       <h1>Protégez vos enfants<br><span>sur internet, simplement.</span></h1>
       <p class="lead">NetProtect installe un filtre dans le telephone de votre enfant. Les sites et les recherches
         sensibles sont bloques automatiquement, sur tous les navigateurs et toutes les applications.</p>
@@ -205,7 +217,7 @@
       </div>
       <div class="trust">
         <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Activation par code</span>
-        <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Aucun abonnement mensuel</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Licence &agrave; vie, paiement unique</span>
         <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Installation en 2 minutes</span>
         <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Android 8 et plus</span>
       </div>
@@ -274,7 +286,7 @@
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 118 0v3"/></svg></div>
           <h3>Activation par code</h3>
-          <p>Une licence par telephone. Activation immediate avec le code recu sur WhatsApp.</p>
+          <p>Une licence &agrave; vie par telephone. Activation immediate avec le code recu sur WhatsApp.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
@@ -301,6 +313,30 @@
           <h3>Aucune donnee collected</h3>
           <p>Aucun historique envoye, aucun compte requis : tout reste sur le telephone.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="captures">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Captures</span>
+        <h2>L'application en images</h2>
+        <p>Captures reales extraites de la demonstration sur un telephone Android.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot"><img src="captures/ecran-accueil-1.jpg" alt="Ecran d'accueil de NetProtect" loading="lazy" width="720" height="1613"><figcaption>Ecran d'accueil<span>Ouverture de l'application</span></figcaption></figure>
+        <figure class="shot"><img src="captures/ecran-accueil-2.jpg" alt="Navigation dans l'application NetProtect" loading="lazy" width="720" height="1613"><figcaption>Navigation<span>Interface simple, un ecran suffit</span></figcaption></figure>
+        <figure class="shot"><img src="captures/premiers-pas-1.jpg" alt="Premiers pas de l'installation" loading="lazy" width="720" height="1613"><figcaption>Premiers pas<span>Installation pas a pas</span></figcaption></figure>
+        <figure class="shot"><img src="captures/premiers-pas-2.jpg" alt="Installation terminee de NetProtect" loading="lazy" width="720" height="1613"><figcaption>Installation terminee<span>Verification des autorisations</span></figcaption></figure>
+        <figure class="shot"><img src="captures/reglages-1.jpg" alt="Reglages du filtre NetProtect" loading="lazy" width="720" height="1613"><figcaption>Reglages du filtre<span>Options de filtrage</span></figcaption></figure>
+        <figure class="shot"><img src="captures/reglages-2.jpg" alt="Configuration de la protection" loading="lazy" width="720" height="1613"><figcaption>Configuration<span>Preference de protection</span></figcaption></figure>
+        <figure class="shot"><img src="captures/protection-active-1.jpg" alt="Protection active sur le telephone" loading="lazy" width="720" height="1613"><figcaption>Protection active<span>Statut du filtre en cours</span></figcaption></figure>
+        <figure class="shot"><img src="captures/protection-active-2.jpg" alt="Connexion VPN de protection active" loading="lazy" width="720" height="1613"><figcaption>Connexion VPN<span>Traffic filtre et chiffre</span></figcaption></figure>
+        <figure class="shot"><img src="captures/filtre-action-1.jpg" alt="Filtre en action dans le navigateur" loading="lazy" width="720" height="1613"><figcaption>Filtre en action<span>Bloque avant l'affichage</span></figcaption></figure>
+        <figure class="shot"><img src="captures/filtre-action-2.jpg" alt="Page de blocage affichee a l'enfant" loading="lazy" width="720" height="1613"><figcaption>Page « bloque »<span>Message clair pour l'enfant</span></figcaption></figure>
+        <figure class="shot"><img src="captures/blocage-1.jpg" alt="Recherche sensible bloquee" loading="lazy" width="720" height="1613"><figcaption>Recherche bloquee<span>Mots-cles sensibles filtres</span></figcaption></figure>
+        <figure class="shot"><img src="captures/blocage-2.jpg" alt="Site sensible bloque par NetProtect" loading="lazy" width="720" height="1613"><figcaption>Site bloque<span>Le filtre reste actif</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -360,20 +396,20 @@
           <div class="card">
             <h3>1 telephone</h3>
             <div class="price">5 000 FCFA</div>
-            <div class="per">Licence unique &middot; 1 an</div>
-            <a class="btn btn-wa btn-block btn-sm" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20la%20licence%201%20t%C3%A9l%C3%A9phone%20(5%20000%20FCFA)." target="_blank" rel="noopener">Commander 1 telephone</a>
+            <div class="per">Licence unique &middot; &agrave; vie</div>
+            <a class="btn btn-wa btn-block btn-sm" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20la%20licence%201%20t%C3%A9l%C3%A9phone%20\(5%20000%20FCFA%2C%20licence%20%C3%A0%20vie\)." target="_blank" rel="noopener">Commander 1 telephone</a>
           </div>
           <div class="card" style="border-color:rgba(77,124,255,.45)">
             <h3>3 telephones</h3>
             <div class="price">12 000 FCFA</div>
-            <div class="per">Licence unique &middot; 1 an &middot; <span class="best">Le plus choisi</span></div>
-            <a class="btn btn-wa btn-block btn-sm" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20la%20licence%203%20t%C3%A9l%C3%A9phones%20(12%20000%20FCFA)." target="_blank" rel="noopener">Commander 3 telephones</a>
+            <div class="per">Licence unique &middot; &agrave; vie &middot; <span class="best">Le plus choisi</span></div>
+            <a class="btn btn-wa btn-block btn-sm" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20la%20licence%203%20t%C3%A9l%C3%A9phones%20\(12%20000%20FCFA%2C%20licence%20%C3%A0%20vie\)." target="_blank" rel="noopener">Commander 3 telephones</a>
           </div>
           <div class="card">
             <h3>5 telephones</h3>
             <div class="price">18 000 FCFA</div>
-            <div class="per">Licence unique &middot; 1 an</div>
-            <a class="btn btn-wa btn-block btn-sm" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20la%20licence%205%20t%C3%A9l%C3%A9phones%20(18%20000%20FCFA)." target="_blank" rel="noopener">Commander 5 telephones</a>
+            <div class="per">Licence unique &middot; &agrave; vie</div>
+            <a class="btn btn-wa btn-block btn-sm" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20la%20licence%205%20t%C3%A9l%C3%A9phones%20\(18%20000%20FCFA%2C%20licence%20%C3%A0%20vie\)." target="_blank" rel="noopener">Commander 5 telephones</a>
           </div>
         </div>
         <div class="cta">
@@ -393,7 +429,7 @@
         <details open><summary>Sur quels telephones NetProtect fonctionne-t-il ?</summary>
           <p>Sur les telephones et tablettes Android version 8.0 ou plus recente. L'application s'installe sous forme de fichier APK.</p></details>
         <details><summary>Un abonnement mensuel est-il necessaire ?</summary>
-          <p>Non. Votre licence est valable un an, sans renouvellement automatique ni paiement recurrent.</p></details>
+          <p>Non. Votre licence est valable &agrave; vie, sans renouvellement ni paiement recurrent.</p></details>
         <details><summary>L'enfant peut-il contourner le filtre ?</summary>
           <p>Le filtre agit au niveau du reseau : il s'applique quel que soit le navigateur ou l'application utilisee.</p></details>
         <details><summary>Comment recois-je ma licence ?</summary>
