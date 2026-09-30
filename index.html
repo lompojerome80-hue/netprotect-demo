@@ -12,7 +12,26 @@
 <style>
   :root { --card:#12172a; --text:#e8ebf2; --muted:#9fa8b9; --border:#1f2842; }
   *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1100px 700px at 50% 0,#101838 0%,#050814 70%);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    background-color:#050814;
+    background-image:
+      linear-gradient(180deg,rgba(5,8,20,.86) 0%,rgba(5,8,20,.78) 45%,rgba(5,8,20,.93) 100%),
+      radial-gradient(1100px 700px at 50% 0,rgba(16,24,56,.55) 0%,rgba(5,8,20,0) 70%),
+      url("fond.jpg");
+    background-size:cover,cover,cover;
+    background-position:center,center,center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+  }
+  @media (max-width:700px){
+    body{background-image:
+      linear-gradient(180deg,rgba(5,8,20,.88) 0%,rgba(5,8,20,.82) 45%,rgba(5,8,20,.94) 100%),
+      url("fond-mobile.jpg");
+      background-attachment:scroll;
+  }
   .wrap{max-width:760px;margin:0 auto;padding:36px 18px 8px}
   header{text-align:center;margin-bottom:28px}
   .logo{display:inline-flex;align-items:center;gap:9px;margin-bottom:16px}
@@ -20,7 +39,7 @@
   h1{font-size:clamp(22px,4vw,32px);font-weight:700;letter-spacing:-0.02em;margin:0}
   .sub{color:var(--muted);margin-top:9px;font-size:15px}
 
-  .hero{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:22px;padding:16px 16px 20px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .hero{background:linear-gradient(180deg,rgba(10,14,30,.62),rgba(10,14,30,.45));border:1px solid var(--border);border-radius:22px;padding:16px 16px 20px;box-shadow:0 24px 70px rgba(0,0,0,.5);backdrop-filter:blur(10px)}
 
   /* Cadre : dimensions figees, image jamais deformee (object-fit:contain) */
   .video-wrap{
@@ -42,7 +61,7 @@
 
   .grid{display:grid;gap:14px;margin-top:22px}
   @media(min-width:680px){.grid-2{grid-template-columns:1fr 1fr}}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+  .card{background:rgba(18,23,42,.72);border:1px solid var(--border);border-radius:16px;padding:18px 20px;backdrop-filter:blur(8px)}
   .card h2{font-size:15px;margin:0 0 12px;color:#fff;letter-spacing:.01em}
   .steps{margin:0;padding:0;list-style:none;counter-reset:s}
   .steps li{counter-increment:s;position:relative;padding:0 0 14px 34px;color:var(--muted);font-size:14px}
@@ -54,7 +73,7 @@
   .feats li:last-child{padding-bottom:0}
   .feats li::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:#4d7cff;margin-top:9px}
 
-  .disclaimer{background:rgba(255,255,255,.028);border:1px solid var(--border);border-radius:16px;padding:16px 20px;margin-top:14px}
+  .disclaimer{background:rgba(10,14,30,.6);border:1px solid var(--border);border-radius:16px;padding:16px 20px;margin-top:14px;backdrop-filter:blur(8px)}
   .disclaimer p{margin:0;color:#8b95a8;font-size:12.5px;line-height:1.65}
   footer{margin-top:34px;text-align:center;color:#6f798c;font-size:12px;border-top:1px solid #1c2130;padding-top:16px}
 </style>
