@@ -165,6 +165,22 @@
     background:rgba(10,14,30,.6)}
   .shot img{display:block;width:100%;height:auto;aspect-ratio:720/1612;object-fit:cover;object-position:top center}
 
+  /* section telechargement */
+  .dl{display:grid;gap:26px;align-items:center;background:linear-gradient(150deg,rgba(77,124,255,.14),rgba(16,21,40,.72) 62%);
+    border:1px solid rgba(77,124,255,.3);border-radius:22px;padding:32px 28px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  @media(min-width:900px){.dl{grid-template-columns:1.15fr .85fr;gap:40px;padding:40px 38px}}
+  .dl p{color:var(--muted);margin:14px 0 0}
+  .dl-box{background:rgba(10,14,30,.62);border:1px solid var(--border);border-radius:18px;padding:24px 22px;text-align:center}
+  .dl-name{font-weight:700;font-size:15px;word-break:break-word}
+  .dl-meta{color:var(--muted);font-size:12.5px;margin:6px 0 18px}
+  .btn-dl{width:100%;background:linear-gradient(135deg,#3f7bff,#6d4dff);color:#fff;font-weight:700;padding:15px 22px}
+  .btn-dl svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2}
+  .btn-dl:hover{filter:brightness(1.1)}
+  .btn-dl-2{background:linear-gradient(135deg,#3f7bff,#6d4dff);color:#fff;font-weight:700}
+  .btn-dl-2 svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2}
+  .btn-dl-2:hover{filter:brightness(1.1)}
+  .dl-note{color:#8d97ad;font-size:12px;line-height:1.6;margin:16px 0 0}
+
   footer{margin-top:50px;border-top:1px solid var(--border);padding:32px 0 38px;text-align:center;color:var(--muted);font-size:13px}
   footer .fcta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:22px}
 
@@ -198,6 +214,7 @@
       <a href="#captures">Captures</a>
       <a href="#fonctions">Ce qu'elle fait</a>
       <a href="#video">Vidéo</a>
+      <a href="#telecharger">Télécharger</a>
       <a href="#commander">Licences</a>
       <a href="#faq">Questions</a>
     </nav>
@@ -219,6 +236,10 @@
         <a class="btn btn-wa btn-lg" href="https://wa.me/22657371093?text=Bonjour%2C%20je%20souhaite%20commander%20une%20licence%20NetProtect." target="_blank" rel="noopener">
           <svg class="wa-ico" viewBox="0 0 32 32"><path d="M16.04 3C8.9 3 3.1 8.8 3.1 15.94c0 2.6.68 5.1 1.98 7.32L3 29.5l6.4-1.68a12.9 12.9 0 0 0 6.64 1.82h.01c7.13 0 12.94-5.8 12.94-12.94S23.18 3 16.04 3zm7.6 18.2c-.32.9-1.87 1.72-2.58 1.8-.71.08-1.6.12-2.57-.16-.6-.18-1.36-.44-2.34-.86-4.12-1.78-6.8-5.94-7-6.22-.2-.28-1.68-2.24-1.68-4.27s1.06-3.03 1.44-3.45c.38-.42.82-.52 1.1-.52h.78c.26 0 .6-.1.94.72.34.82 1.16 2.82 1.26 3.03.1.2.18.44.04.71-.14.28-.22.44-.4.68-.2.24-.4.54-.58.72-.2.2-.4.42-.17.82.24.4 1.06 1.74 2.27 2.82 1.56 1.39 2.87 1.82 3.27 2.02.4.2.64.17.88-.1.24-.28 1.04-1.22 1.32-1.64.28-.42.56-.35.94-.21.38.14 2.42 1.14 2.83 1.35.42.2.7.3.8.47.1.16.1.95-.22 1.85z"/></svg>
           Commander une licence
+        </a>
+        <a class="btn btn-dl-2 btn-lg" href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/NetProtectMobile-v2.8.apk" download="NetProtectMobile-v2.8.apk">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+          Telecharger (788 Ko)
         </a>
         <a class="btn btn-ghost btn-lg" href="#video">Voir la demonstration</a>
       </div>
@@ -385,6 +406,35 @@
           </video>
         </div>
         <p class="video-cap">Dur&eacute;e 4 min 17 &mdash; utilisez les commandes pour le volume et le plein &eacute;cran.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="telecharger">
+    <div class="wrap">
+      <div class="dl">
+        <div class="dl-txt">
+          <span class="eyebrow">Telechargement</span>
+          <h2>Telargez l'application</h2>
+          <p>Version 2.8 pour telephone Android. Le fichier s'installe directement sur le telephone,
+            puis la licence s'active en quelques secondes avec votre code.</p>
+          <ul class="feats" style="margin-top:18px">
+            <li>Android 8 ou superieur.</li>
+            <li>Fichier de 788 Ko, telecharge en quelques secondes.</li>
+            <li>Licence a vie, aucun abonnement.</li>
+            <li>Transfert gratuit vers un autre telephone.</li>
+          </ul>
+        </div>
+        <div class="dl-box">
+          <div class="dl-name">NetProtectMobile-v2.8.apk</div>
+          <div class="dl-meta">Version 2.8 &middot; 788 Ko &middot; Android</div>
+          <a class="btn btn-dl" href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/NetProtectMobile-v2.8.apk" download="NetProtectMobile-v2.8.apk">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+            Telecharger l'application
+          </a>
+          <p class="dl-note">Le fichier APK n'est pas disponible sur le Play Store : autorisez
+            « sources inconnues » pour votre navigateur le temps de l'installation.</p>
+        </div>
       </div>
     </div>
   </section>
