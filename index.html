@@ -210,6 +210,19 @@
     padding:7px 12px;border-radius:9px;opacity:0;pointer-events:none;transition:.18s}
   .wa-float:hover::after{opacity:1}
   @media(max-width:520px){.wa-float::after{display:none}}
+
+  /* navigation haut / bas */
+  .toUp{position:fixed;left:18px;bottom:18px;z-index:60;width:50px;height:50px;border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;
+    border:1px solid var(--border);background:rgba(12,17,34,.86);color:#dbe2f0;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    box-shadow:0 8px 26px rgba(0,0,0,.42);transition:opacity .2s ease,transform .2s ease,border-color .2s ease}
+  .toUp:hover{border-color:rgba(77,124,255,.6);color:#fff;transform:translateY(-2px)}
+  .toUp svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .toUp i{font-style:normal;font-size:8.5px;font-weight:700;letter-spacing:.06em;line-height:1}
+  .toUp[hidden]{opacity:0;pointer-events:none;transform:translateY(10px)}
+  .toUp .dn{transform:rotate(180deg)}
+  @media(max-width:520px){.toUp{left:12px;bottom:12px;width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -308,54 +321,54 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Ce qu'elle fait</span>
-        <h2>Un filtre qui travaille meme quand l'enfant est seul</h2>
-        <p>NetProtect agit au niveau du reseau : impossible de contourner le filtre en ouvrant un autre navigateur ou une autre application.</p>
+        <h2>Un filtre qui travaille m&ecirc;me quand l'enfant est seul</h2>
+        <p>NetProtect agit au niveau du r&eacute;seau : impossible de contourner le filtre en ouvrant un autre navigateur ou une autre application.</p>
       </div>
       <div class="grid g-3">
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6l8-3z"/></svg></div>
-          <h3>Filtrage reseau (DNS)</h3>
-          <p>Le filtre s'applique a tout le telephone : navigateur, reseaux sociaux, applications tierces.</p>
+          <h3>Filtrage r&eacute;seau (DNS)</h3>
+          <p>Le filtre s'applique &agrave; tout le t&eacute;l&eacute;phone : navigateur, r&eacute;seaux sociaux, applications tierces.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></div>
-          <h3>Recherches filtrees</h3>
-          <p>Les mots-cles sensibles sont bloques dans les moteurs de recherche, sur tous les navigateurs.</p>
+          <h3>Recherches filtr&eacute;es</h3>
+          <p>Les mots-cl&eacute;s sensibles sont bloqu&eacute;s dans les moteurs de recherche, sur tous les navigateurs.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h13"/></svg></div>
           <h3>Page « bloque » claire</h3>
-          <p> plutot qu'une erreur incomprehensible, l'enfant voit une page explicite : ce contenu est bloque.</p>
+          <p>Plut&ocirc;t qu'une erreur incomprehensible, l'enfant voit une page explicite : ce contenu est bloque.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 118 0v3"/></svg></div>
           <h3>Activation par code</h3>
-          <p>Une licence &agrave; vie par telephone. Activation immediate avec le code recu sur WhatsApp.</p>
+          <p>Une licence &agrave; vie par t&eacute;l&eacute;phone. Activation imm&eacute;diate avec le code re&ccedil;u sur WhatsApp.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
           <h3>Protection VPN</h3>
-          <p>Une connexion chiffree et filtree est etablie tant que la protection est active.</p>
+          <p>Une connexion chiffr&eacute;e et filtr&eacute;e est &eacute;tablie tant que la protection est active.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6l8-3z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg></div>
           <h3>Controle parental</h3>
-          <p>Vous restez le seul a pouvoir activer ou desactiver la protection sur l'appareil.</p>
+          <p>Vous restez le seul &agrave; pouvoir activer ou d&eacute;sactiver la protection sur l'appareil.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-          <h3>Effet immediat</h3>
-          <p>Le filtre agit des la premiere connexion : aucune latence ressentie par l'enfant.</p>
+          <h3>Effet imm&eacute;diat</h3>
+          <p>Le filtre agit d&egrave;s la premi&egrave;re connexion : aucune latence ressentie par l'enfant.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-          <h3>Concu pour Android</h3>
-          <p>Optimise pour les telephones et tablettes Android 8 ou superieurs.</p>
+          <h3>Con&ccedil;u pour Android</h3>
+          <p>Optimis&eacute; pour les t&eacute;l&eacute;phones et tablettes Android 8 ou sup&eacute;rieurs.</p>
         </div>
         <div class="card">
           <div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M2 20h20"/></svg></div>
-          <h3>Aucune donnee collected</h3>
-          <p>Aucun historique envoye, aucun compte requis : tout reste sur le telephone.</p>
+          <h3>Aucune donn&eacute;e collect&eacute;e</h3>
+          <p>Aucun historique envoy&eacute;, aucun compte requis : tout reste sur le t&eacute;l&eacute;phone.</p>
         </div>
       </div>
     </div>
@@ -582,5 +595,36 @@
   </div>
 </footer>
 
+<button class="toUp" id="nav-haut-bas" type="button" aria-label="Navigation haut et bas" title="Haut / bas de la page">
+  <svg class="up" viewBox="0 0 24 24"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg>
+  <i>HAUT</i>
+  <svg class="dn" viewBox="0 0 24 24"><path d="M12 5v13"/><path d="M6 12l6 6 6-6"/></svg>
+</button>
+
+<script>
+(function () {
+  var b = document.getElementById("nav-haut-bas");
+  if (!b) return;
+  var i = b.querySelector("i");
+  var up = b.querySelector(".up");
+  function milieu() {
+    return (document.documentElement.scrollHeight - window.innerHeight) / 2;
+  }
+  function maj() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    var bas = y >= milieu();
+    i.textContent = bas ? "BAS" : "HAUT";
+    up.style.transform = bas ? "rotate(180deg)" : "";
+  }
+  b.addEventListener("click", function () {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    window.scrollTo({ top: (y >= milieu()) ? document.documentElement.scrollHeight : 0,
+                      behavior: "smooth" });
+  });
+  window.addEventListener("scroll", maj, { passive: true });
+  window.addEventListener("resize", maj);
+  maj();
+})();
+</script>
 </body>
 </html>
