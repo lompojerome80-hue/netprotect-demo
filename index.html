@@ -159,12 +159,11 @@
 
   /* galerie captures */
   .shots{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-  @media(min-width:620px){.shots{grid-template-columns:repeat(3,1fr)}}
-  @media(min-width:1000px){.shots{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:700px){.shots{grid-template-columns:repeat(3,1fr)}}
   .shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border);
     background:rgba(10,14,30,.6);transition:transform .18s ease,border-color .18s ease}
   .shot:hover{transform:translateY(-4px);border-color:rgba(77,124,255,.45)}
-  .shot img{display:block;width:100%;height:auto;aspect-ratio:1080/2420;object-fit:cover;object-position:top center}
+  .shot img{display:block;width:100%;height:auto;aspect-ratio:720/1612;object-fit:cover;object-position:top center}
   .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:12.5px;font-weight:600;color:#fff;
     background:linear-gradient(180deg,rgba(5,8,20,0),rgba(5,8,20,.88))}
   .shot figcaption span{display:block;font-weight:400;font-size:11.5px;color:#a9b3c6}
@@ -363,21 +362,14 @@
       <div class="sec-head">
         <span class="eyebrow">Captures</span>
         <h2>L'application en images</h2>
-        <p>Captures reales extraites de la demonstration sur un telephone Android.</p>
+        <p>Les principaux ecrans de l'application, tels qu'ils apparaissent sur un telephone Android.</p>
       </div>
       <div class="shots">
-        <figure class="shot"><img src="captures/ecran-accueil-1.jpg" alt="Ecran d'accueil de NetProtect" loading="lazy" width="720" height="1613"><figcaption>Ecran d'accueil<span>Ouverture de l'application</span></figcaption></figure>
-        <figure class="shot"><img src="captures/ecran-accueil-2.jpg" alt="Navigation dans l'application NetProtect" loading="lazy" width="720" height="1613"><figcaption>Navigation<span>Interface simple, un ecran suffit</span></figcaption></figure>
-        <figure class="shot"><img src="captures/premiers-pas-1.jpg" alt="Premiers pas de l'installation" loading="lazy" width="720" height="1613"><figcaption>Premiers pas<span>Installation pas a pas</span></figcaption></figure>
-        <figure class="shot"><img src="captures/premiers-pas-2.jpg" alt="Installation terminee de NetProtect" loading="lazy" width="720" height="1613"><figcaption>Installation terminee<span>Verification des autorisations</span></figcaption></figure>
-        <figure class="shot"><img src="captures/reglages-1.jpg" alt="Reglages du filtre NetProtect" loading="lazy" width="720" height="1613"><figcaption>Reglages du filtre<span>Options de filtrage</span></figcaption></figure>
-        <figure class="shot"><img src="captures/reglages-2.jpg" alt="Configuration de la protection" loading="lazy" width="720" height="1613"><figcaption>Configuration<span>Preference de protection</span></figcaption></figure>
-        <figure class="shot"><img src="captures/protection-active-1.jpg" alt="Protection active sur le telephone" loading="lazy" width="720" height="1613"><figcaption>Protection active<span>Statut du filtre en cours</span></figcaption></figure>
-        <figure class="shot"><img src="captures/protection-active-2.jpg" alt="Connexion VPN de protection active" loading="lazy" width="720" height="1613"><figcaption>Connexion VPN<span>Traffic filtre et chiffre</span></figcaption></figure>
-        <figure class="shot"><img src="captures/filtre-action-1.jpg" alt="Filtre en action dans le navigateur" loading="lazy" width="720" height="1613"><figcaption>Filtre en action<span>Bloque avant l'affichage</span></figcaption></figure>
-        <figure class="shot"><img src="captures/filtre-action-2.jpg" alt="Page de blocage affichee a l'enfant" loading="lazy" width="720" height="1613"><figcaption>Page « bloque »<span>Message clair pour l'enfant</span></figcaption></figure>
-        <figure class="shot"><img src="captures/blocage-1.jpg" alt="Recherche sensible bloquee" loading="lazy" width="720" height="1613"><figcaption>Recherche bloquee<span>Mots-cles sensibles filtres</span></figcaption></figure>
-        <figure class="shot"><img src="captures/blocage-2.jpg" alt="Site sensible bloque par NetProtect" loading="lazy" width="720" height="1613"><figcaption>Site bloque<span>Le filtre reste actif</span></figcaption></figure>
+        <figure class="shot"><img src="captures/01-tableau-de-bord.jpg" alt="Tableau de bord de NetProtect" loading="lazy" width="720" height="1612"><figcaption>Tableau de bord<span>Etat de la protection en un coup d'oeil</span></figcaption></figure>
+        <figure class="shot"><img src="captures/02-options-de-protection.jpg" alt="Options de protection de NetProtect" loading="lazy" width="720" height="1612"><figcaption>Options de protection<span>Ajustez le niveau de filtrage</span></figcaption></figure>
+        <figure class="shot"><img src="captures/03-activation-licence.jpg" alt="Activation de la licence NetProtect" loading="lazy" width="720" height="1612"><figcaption>Activation de la licence<span>Activez votre licence &agrave; vie</span></figcaption></figure>
+        <figure class="shot"><img src="captures/04-site-bloque.jpg" alt="Site bloque par NetProtect" loading="lazy" width="720" height="1612"><figcaption>Site bloque<span>Le contenu sensible ne s'affiche pas</span></figcaption></figure>
+        <figure class="shot"><img src="captures/05-recherche-bloquee.jpg" alt="Recherche bloquee par NetProtect" loading="lazy" width="720" height="1612"><figcaption>Recherche bloquee<span>Les mots-cles sensibles sont filtres</span></figcaption></figure>
       </div>
     </div>
   </section>
