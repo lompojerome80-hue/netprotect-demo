@@ -9,25 +9,57 @@
   .stage { position: relative; width: 100%; height: 100%; display: flex;
            align-items: center; justify-content: center; }
   video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
-  .fallback { position: absolute; inset: auto 0 40% 0; text-align: center; color: #ccc;
-              font: 14px "Segoe UI", Arial, sans-serif; }
+
+  .overlay {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 14px; cursor: pointer;
+    background: rgba(0,0,0,.35);
+  }
+  .overlay.hidden { display: none; }
+  .play {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: rgba(255,255,255,.14); border: 2px solid rgba(255,255,255,.55);
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(3px);
+  }
+  .play svg { width: 34px; height: 34px; fill: #fff; margin-left: 5px; }
+  .label { color: #e8ebf2; font: 600 15px "Segoe UI", Arial, sans-serif; letter-spacing: .3px; }
+  .msg { position: absolute; inset: auto 12px 16px 12px; color: #d8dde9; text-align: center;
+         font: 13px "Segoe UI", Arial, sans-serif; display: none; }
+  .msg a { color: #8ab4ff; }
+  .title { position: absolute; top: 10px; left: 0; right: 0; text-align: center;
+           color: #aeb6c6; font: 500 13px "Segoe UI", Arial, sans-serif; }
 </style>
 </head>
 <body>
 <div class="stage">
-  <video controls playsinline autoplay muted preload="auto"
-         poster="" id="v">
-    <source src="video-demo-netprotect.mp4" type="video/mp4">
-  </video>
-  <div class="fallback">Si la lecture ne démarre pas,
-    <a href="video-demo-netprotect.mp4" style="color:#8ab4ff">cliquez ici</a>.</div>
+  <video controls playsinline preload="metadata" id="v"
+         src="video-demo-netprotect.mp4"></video>
+
+  <div class="title">NetProtect — démonstration</div>
+
+  <div class="overlay" id="ov">
+    <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="label">Cliquer pour lire la vidéo</div>
+  </div>
+
+  <div class="msg" id="msg"></div>
 </div>
+
 <script>
-  // autoplay avec son si le navigateur l'autorise déjà, sinon le visiteur active le son via les commandes
-  var v = document.getElementById('v');
-  v.muted = false;
-  var p = v.play();
-  if (p && p.catch) p.catch(function () { v.muted = true; v.play(); });
+  var v = document.getElementById('v'), ov = document.getElementById('ov'), msg = document.getElementById('msg');
+  function show(t) { msg.style.display = 'block'; msg.innerHTML = t; }
+  function start() {
+    ov.classList.add('hidden');
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {
+      show('Lecture impossible ici. <a href="video-demo-netprotect.mp4" target="_blank">Ouvrir la vidéo</a>');
+    });
+  }
+  ov.addEventListener('click', start);
+  v.addEventListener('error', function () {
+    show('Vidéo non chargée. <a href="video-demo-netprotect.mp4" target="_blank">Ouvrir la vidéo</a>');
+  });
 </script>
 </body>
 </html>
