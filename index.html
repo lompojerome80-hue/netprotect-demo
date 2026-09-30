@@ -12,7 +12,8 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/fond1-d.jpg">
 <link rel="preload" as="image" href="fond1-d.jpg" media="(min-width:1025px)">
 <link rel="preload" as="image" href="fond1-t.jpg" media="(min-width:701px) and (max-width:1024px)">
-<link rel="preload" as="image" href="fond1-m.jpg" media="(max-width:700px)">
+<link rel="preload" as="image" href="fond1-m.jpg" media="(max-width:700px) and (orientation:portrait)">
+<link rel="preload" as="image" href="fond1-ml.jpg" media="(orientation:landscape) and (max-height:560px)">
 <style>
   :root{ --text:#e9ecf5; --muted:#a3adc2; --border:rgba(255,255,255,.11); --wa:#25d366; --accent:#4d7cff; --pad:20px; }
   *{box-sizing:border-box}
@@ -24,10 +25,18 @@
 
   .bg{position:fixed;inset:0;z-index:-2;background-size:cover;background-position:center center;
     background-repeat:no-repeat;will-change:opacity}
+  /* defaut : telephone portrait */
   .bg-1{background-image:url("fond1-m.jpg");animation:xfade 16s ease-in-out infinite}
   .bg-2{background-image:url("fond2-m.jpg");animation:xfade 16s ease-in-out infinite;animation-delay:-8s;opacity:0}
   @keyframes xfade{0%{opacity:1}45%{opacity:1}55%{opacity:0}100%{opacity:0}}
+  /* telephone / petit ecran en paysage */
+  @media (orientation:landscape) and (max-height:560px){
+    .bg-1{background-image:url("fond1-ml.jpg")}
+    .bg-2{background-image:url("fond2-ml.jpg")}
+  }
+  /* tablette */
   @media (min-width:701px) and (max-width:1024px){ .bg-1{background-image:url("fond1-t.jpg")} .bg-2{background-image:url("fond2-t.jpg")} }
+  /* ordinateur */
   @media (min-width:1025px){ .bg-1{background-image:url("fond1-d.jpg")} .bg-2{background-image:url("fond2-d.jpg")} }
   @media (prefers-reduced-motion:reduce){ .bg-1,.bg-2{animation:none} .bg-2{display:none} }
   .veil{position:fixed;inset:0;z-index:-1;pointer-events:none;
