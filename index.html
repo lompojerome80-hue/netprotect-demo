@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>NetProtect — Protection parentale pour téléphone Android</title>
 <meta name="description" content="NetProtect bloque les sites et les recherches sensibles sur le téléphone de vos enfants. Filtre reseau, VPN de protection, activation par code. Commandez votre licence sur WhatsApp.">
+<meta name="author" content="Jérôme LOMPO">
+<meta name="copyright" content="© 2026 Jérôme LOMPO — NetProtect">
 <meta name="theme-color" content="#050814">
 <meta property="og:type" content="website">
 <meta property="og:title" content="NetProtect — Protection parentale Android">
@@ -180,8 +182,22 @@
   .btn-dl-2 svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2}
   .btn-dl-2:hover{filter:brightness(1.1)}
   .dl-note{color:#8d97ad;font-size:12px;line-height:1.6;margin:16px 0 0}
+  .sig{margin-top:18px;background:rgba(10,14,30,.55);border:1px solid var(--border);border-radius:16px;padding:16px 20px}
+  .sig summary{cursor:pointer;font-weight:600;font-size:14.5px;color:#e8ecf7;list-style:none}
+  .sig summary::-webkit-details-marker{display:none}
+  .sig summary::before{content:"\25B8  ";color:var(--blue,#4d8cff)}
+  .sig[open] summary::before{content:"\25BE  "}
+  .sig-lead{color:var(--muted);font-size:13.5px;margin:14px 0 4px}
+  .sig-list{margin:0;display:grid;gap:2px 18px}
+  @media(min-width:760px){.sig-list{grid-template-columns:minmax(210px,auto) 1fr}}
+  .sig-list dt{font-weight:600;font-size:12.5px;color:#9aa4b8;padding:9px 0}
+  .sig-list dd{margin:0;font-size:13px;color:#dbe2f0;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  @media(min-width:760px){.sig-list dd{padding:9px 0 9px 0;border-bottom:1px solid rgba(255,255,255,.05)}}
+  .sig-list code{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#8fd0ff;word-break:break-all}
 
   footer{margin-top:50px;border-top:1px solid var(--border);padding:32px 0 38px;text-align:center;color:var(--muted);font-size:13px}
+  footer strong{color:#e8ecf7}
+  .f-owner{display:block;margin-top:8px;font-size:12.5px;color:#8d97ad}
   footer .fcta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:22px}
 
   .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;
@@ -436,6 +452,28 @@
             « sources inconnues » pour votre navigateur le temps de l'installation.</p>
         </div>
       </div>
+      <details class="sig">
+        <summary>V&eacute;rifier que l'application est bien la mienne</summary>
+        <p class="sig-lead">L'application est sign&eacute;e avec une cl&eacute; priv&eacute;e dont je suis le seul
+          d&eacute;tenteur. Android refuse d'installer une version modifi&eacute;e, et les empreintes
+          ci-dessous permettent de v&eacute;rifier vous-m&ecirc;me que le fichier t&eacute;l&eacute;charg&eacute; est
+          bien celui que j'ai publi&eacute;.</p>
+        <dl class="sig-list">
+          <dt>&Eacute;diteur et responsable de publication</dt>
+          <dd>J&eacute;r&ocirc;me LOMPO &mdash; Burkina Faso</dd>
+          <dt>Signataire de l'application</dt>
+          <dd>CN=NetProtect Mobile, OU=Mobile, O=NetProtect</dd>
+          <dt>Certificat de signature</dt>
+          <dd>valide du 25 septembre 2026 au 17 septembre 2056</dd>
+          <dt>Empreinte du certificat (SHA-256)</dt>
+          <dd><code>1D:73:BD:C4:A7:C4:43:C9:C5:B6:C1:2A:B7:B0:FD:53:<br>5D:53:94:21:20:42:2D:8F:6E:60:F5:2A:11:B5:FC:61</code></dd>
+          <dt>Empreinte du fichier APK (SHA-256)</dt>
+          <dd><code>EC:87:71:1C:A7:2E:78:64:B8:A5:4C:9A:81:34:0C:6F:82:46:78:<br>E6:30:5E:01:12:57:5C:B8:D1:60:36:AB:BE</code></dd>
+          <dt>Comment v&eacute;rifier</dt>
+          <dd>T&eacute;l&eacute;chargez le fichier, puis dans les param&egrave;tres du t&eacute;l&eacute;phone ouvrez
+            <em>Applications &rsaquo; NetProtect &rsaquo; Details</em> : Android affiche le m&ecirc;me nom de signataire.</dd>
+        </dl>
+      </details>
     </div>
   </section>
 
@@ -524,6 +562,7 @@
         ainsi que des termes dont l'affichage n'est pas autoris&eacute;, conform&eacute;ment a la politique de la communaut&eacute; YouTube qui
         interdit tout contenu pornographique. Aucun contenu choqu&eacute; n'est pr&eacute;sent&eacute; : les sites et recherches sensibles
         apparaissent uniquement a l'&eacute;tat bloqu&eacute;. NetProtect est un outil de protection parentale destin&eacute; aux mineurs.</p>
+        <p style="margin-top:14px"><b>&Eacute;diteur du site et de l'application.</b> J&eacute;r&ocirc;me LOMPO &mdash; Burkina Faso. NetProtect est la marque et l'application publi&eacute;es par J&eacute;r&ocirc;me LOMPO. Toute reproduction, revente ou redistribution de l'application ou de son code est interdite sans autorisation &eacute;crite.</p>
       </div>
     </div>
   </section>
@@ -538,7 +577,8 @@
       </a>
       <a class="btn btn-ghost" href="#video">Revoir la demonstration</a>
     </div>
-    &copy; NetProtect &mdash; Tous droits reserves.
+    &copy; 2026 <strong>Jérôme LOMPO</strong> &mdash; NetProtect. Tous droits réservés.
+    <span class="f-owner">Éditeur et responsable de publication : Jérôme LOMPO &middot; Burkina Faso</span>
   </div>
 </footer>
 
