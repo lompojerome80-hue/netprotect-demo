@@ -3,44 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NetProtect — Vidéo de démonstration</title>
-<meta name="description" content="Démonstration de l'application NetProtect : installation, activation, protection active et blocage des sites et recherches sensibles.">
+<title>NetProtect — Démonstration vidéo</title>
+<meta name="description" content="NetProtect, application de protection parentale pour Android. Découvrez en vidéo l'installation, l'activation et le filtrage des sites et recherches sensibles.">
+<meta property="og:title" content="NetProtect — Démonstration vidéo">
+<meta property="og:description" content="Installation, activation, protection active et blocage des sites et recherches sensibles.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b1022">
 <style>
-  :root { --bg:#0b1022; --card:#12172a; --primary:#4d7cff; --text:#e8ebf2; --muted:#9fa8b9; --border:#1f2842; }
+  :root { --card:#12172a; --text:#e8ebf2; --muted:#9fa8b9; --border:#1f2842; }
   *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1200px 800px at 50% 0,#101838 0%,#050814 70%);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.6}
-  .wrap{max-width:880px;margin:0 auto;padding:40px 20px}
-  header{text-align:center;margin-bottom:40px}
-  h1{font-size:clamp(24px,4.5vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0}
-  .sub{color:var(--muted);margin-top:8px;font-size:clamp(14px,2.2vw,16px)}
-  .hero{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:20px;padding:20px 20px 10px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
-  .video-wrap{position:relative;width:100%;aspect-ratio:9/16;max-height:min(78vh,720px);margin:0 auto;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 10px 40px rgba(0,0,0,.55)}
-  .video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-  .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:20px 0 0;padding-bottom:20px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:12px;font-size:14px;font-weight:500;text-decoration:none;transition:.15s ease;border:1px solid var(--border);cursor:pointer;font-family:inherit}
-  .btn-primary{background:linear-gradient(180deg,#6b95ff,#4d7cff);color:#fff;border-color:rgba(255,255,255,.2);box-shadow:0 10px 40px rgba(77,124,255,.35)}
-  .btn-ghost{background:rgba(255,255,255,.06);color:var(--text)}
-  .btn:hover{transform:translateY(-1px)}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:24px}
-  .card h2{font-size:16px;margin:0 0 8px;color:#fff}
-  .card p{color:var(--muted);font-size:14px;margin:0}
-  .steps{display:grid;gap:12px;margin-top:6px}
-  .step{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
-  .step b{color:#fff;font-size:14px;display:block}
-  .step span{color:var(--muted);font-size:13px}
-  .num{flex:0 0 26px;height:26px;border-radius:50%;background:linear-gradient(180deg,#6b95ff,#4d7cff);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:2px}
-  pre{background:#0a1024;border:1px solid var(--border);border-radius:12px;padding:14px;overflow-x:auto;color:#bfe7c3;font-size:12px;margin:12px 0 0;font-family:Consolas,"Courier New",monospace;white-space:pre-wrap;word-break:break-all}
-  code{font-family:Consolas,"Courier New",monospace;font-size:13px;color:#9fe0b0;word-break:break-all}
-  .note{font-size:12.5px;color:#8b95a8;margin-top:22px;text-align:center}
-  footer{margin-top:40px;text-align:center;color:#6f798c;font-size:12px;border-top:1px solid #1c2130;padding-top:16px}
+  body{margin:0;background:radial-gradient(1100px 700px at 50% 0,#101838 0%,#050814 70%);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:36px 18px 8px}
+  header{text-align:center;margin-bottom:28px}
+  .logo{display:inline-flex;align-items:center;gap:9px;margin-bottom:16px}
+  .dot{width:26px;height:26px;border-radius:8px;background:linear-gradient(140deg,#6b95ff,#3d5bff);box-shadow:0 6px 20px rgba(77,124,255,.45)}
+  h1{font-size:clamp(22px,4vw,32px);font-weight:700;letter-spacing:-0.02em;margin:0}
+  .sub{color:var(--muted);margin-top:9px;font-size:15px}
+
+  .hero{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:22px;padding:16px 16px 18px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .video-wrap{position:relative;width:100%;max-width:420px;margin:0 auto;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 12px 44px rgba(0,0,0,.55)}
+  .video-wrap video{display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;background:#000}
+  .caption{text-align:center;color:var(--muted);font-size:13px;margin:14px 0 0}
+
+  .grid{display:grid;gap:14px;margin-top:22px}
+  @media(min-width:680px){.grid-2{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+  .card h2{font-size:15px;margin:0 0 12px;color:#fff;letter-spacing:.01em}
+  .steps{margin:0;padding:0;list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding:0 0 14px 34px;color:var(--muted);font-size:14px}
+  .steps li:last-child{padding-bottom:0}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:linear-gradient(180deg,#6b95ff,#4d7cff);color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+  .steps li b{display:block;color:#fff;font-weight:600;margin-bottom:1px}
+  .feats{margin:0;padding:0;list-style:none}
+  .feats li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px;padding:0 0 10px}
+  .feats li:last-child{padding-bottom:0}
+  .feats li::before{content:"";flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:#4d7cff;margin-top:9px}
+
+  .disclaimer{background:rgba(255,255,255,.028);border:1px solid var(--border);border-radius:16px;padding:16px 20px;margin-top:14px}
+  .disclaimer p{margin:0;color:#8b95a8;font-size:12.5px;line-height:1.65}
+  footer{margin-top:34px;text-align:center;color:#6f798c;font-size:12px;border-top:1px solid #1c2130;padding-top:16px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <h1>NetProtect — Vidéo de démonstration</h1>
-    <p class="sub">Installation, activation, protection active et blocage des sites / recherches sensibles.</p>
+    <div class="logo"><span class="dot"></span></div>
+    <h1>NetProtect</h1>
+    <p class="sub">Application de protection parentale pour Android — vidéo de démonstration</p>
   </header>
 
   <div class="hero">
@@ -48,52 +58,42 @@
       <video controls playsinline preload="metadata"
              poster="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/affiche.jpg">
         <source src="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4" type="video/mp4">
-        Votre navigateur ne peut pas lire cette vidéo.
-        <a href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4">Télécharger la vidéo</a>
       </video>
     </div>
-    <div class="actions">
-      <a class="btn btn-primary" href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4" download>Télécharger la vidéo (MP4)</a>
-      <button class="btn btn-ghost" id="copy">Copier le code d'intégration</button>
+    <p class="caption">Durée 4 min 17 — utilisez les commandes pour le volume et le plein écran.</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h2>Ce que montre la vidéo</h2>
+      <ul class="feats">
+        <li>Installation de l'application sur un téléphone Android</li>
+        <li>Activation du compte avec le code fourni</li>
+        <li>Connexion VPN de protection</li>
+        <li>Blocage des sites et recherches sensibles</li>
+        <li>Désactivation de la protection</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Comment ça marche</h2>
+      <ol class="steps">
+        <li><b>Activez la protection</b>L'application se connecte au VPN de filtrage.</li>
+        <li><b>Naviguez normalement</b>Le contenu sensible est bloqué à la volée.</li>
+        <li><b>Désactivez quand vous le souhaitez</b>Vous gardez la main sur l'appareil.</li>
+      </ol>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Coller la vidéo sur votre boutique</h2>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><div><b>Ouvrez la description du produit</b><span>Passez l'éditeur en mode HTML / code source.</span></div></div>
-      <div class="step"><div class="num">2</div><div><b>Copiez le code ci-dessous</b><span>Le bouton « Copier le code d'intégration » ci-dessus le met dans le presse-papiers.</span></div></div>
-      <div class="step"><div class="num">3</div><div><b>Collez et enregistrez</b><span>La vidéo se lit directement dans la page, avec volume, pause et plein écran.</span></div></div>
-    </div>
-    <pre id="snippet">&lt;video controls playsinline preload="metadata" width="360"
-   style="width:100%;max-width:420px;border-radius:12px;background:#000"
-   poster="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/affiche.jpg"
-   src="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4"&gt;&lt;/video&gt;</pre>
-    <p style="margin-top:12px">Si votre boutique n'accepte pas le HTML, utilisez ce lien direct — la vidéo s'ouvre alors dans le lecteur du navigateur :</p>
-    <p style="margin-top:6px"><code>https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4</code></p>
+  <div class="disclaimer">
+    <p><b>Avis.</b> Cette vidéo montre l'écran d'un téléphone pour illustrer le fonctionnement de NetProtect.
+    Les marques et logos visibles appartiennent à leurs propriétaires respectifs. Certaines zones sont
+    volontairement floutées ou censurées : elles contiennent des informations confidentielles (clé d'activation,
+    codes et mots de passe) ainsi que des termes dont l'affichage n'est pas autorisé, conformément à la politique
+    de la communauté YouTube qui interdit tout contenu pornographique. Aucun contenu choqué n'est présenté :
+    les sites et recherches sensibles apparaissent uniquement à l'état bloqué.</p>
   </div>
 
-  <div class="card">
-    <h2>Avis — Démonstration</h2>
-    <p>Cette vidéo montre un écran de téléphone pour illustrer le fonctionnement de NetProtect, application de protection parentale.
-       Les marques et logos visibles appartiennent à leurs propriétaires respectifs.
-       Certaines zones sont volontairement floutées ou censurées : elles contiennent des informations confidentielles
-       (clé d'activation, codes et mots de passe) et des termes dont l'affichage n'est pas autorisé
-       (conformément à la politique de la communauté YouTube, tout contenu pornographique est interdit).
-       Aucun contenu choqué n'est présenté : les sites et recherches sensibles apparaissent uniquement à l'état bloqué.</p>
-  </div>
-
-  <footer>© NetProtect — Démonstration produit. Tous droits réservés.</footer>
+  <footer>© NetProtect — Tous droits réservés.</footer>
 </div>
-
-<script>
-  document.getElementById('copy').addEventListener('click', function () {
-    var txt = document.getElementById('snippet').textContent;
-    navigator.clipboard.writeText(txt).then(() => {
-      this.textContent = 'Code copié ✓';
-      setTimeout(() => { this.textContent = "Copier le code d'intégration"; }, 1800);
-    });
-  });
-</script>
 </body>
 </html>
