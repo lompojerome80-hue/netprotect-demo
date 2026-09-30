@@ -33,8 +33,8 @@
 </head>
 <body>
 <div class="stage">
-  <video controls playsinline preload="metadata" poster="affiche.jpg" id="v"
-         src="video-demo-netprotect.mp4"></video>
+  <video controls playsinline preload="metadata" poster="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/affiche.jpg" id="v"
+         src="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4"></video>
 
   <div class="title">NetProtect — démonstration</div>
 
@@ -53,12 +53,12 @@
     ov.classList.add('hidden');
     var p = v.play();
     if (p && p.catch) p.catch(function () {
-      show('Lecture impossible ici. <a href="video-demo-netprotect.mp4" target="_blank">Ouvrir la vidéo</a>');
+      show('Lecture impossible ici. <a href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4" target="_blank">Ouvrir la vidéo</a>');
     });
   }
   ov.addEventListener('click', start);
   v.addEventListener('error', function () {
-    show('Vidéo non chargée. <a href="video-demo-netprotect.mp4" target="_blank">Ouvrir la vidéo</a>');
+    show('Vidéo non chargée. <a href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4" target="_blank">Ouvrir la vidéo</a>');
   });
 </script>
 </body>

@@ -54,39 +54,44 @@
   <p class="sub">Installation, activation, protection active et blocage des sites / recherches sensibles.</p>
 
   <video class="player" controls playsinline preload="metadata"
-         poster="affiche.jpg">
-    <source src="video-demo-netprotect.mp4" type="video/mp4">
+         poster="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/affiche.jpg">
+    <source src="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4" type="video/mp4">
     Votre navigateur ne peut pas lire cette vidéo.
-    <a href="video-demo-netprotect.mp4">Télécharger la vidéo</a>
+    <a href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4">Télécharger la vidéo</a>
   </video>
 
   <div class="card">
-    <h2>Lecteur intégré (vidéo dans la page, avec volume et plein écran)</h2>
-    <p>Collez ce code dans la description du produit (HTML accepté) : la vidéo s'affiche directement dans la page.
-       Un bouton « Cliquer pour lire » apparaît, puis les commandes (volume, pause, plein écran) restent accessibles.
-       Fichier optimisé 6,6 Mo : démarrage immédiat sur Edge, Chrome, Firefox et Safari.</p>
+    <h2>Option 1 (recommandée) — balise &lt;video&gt; : la vidéo se lit dans la page</h2>
+    <p>Collez ce code dans la description du produit (mode HTML). Lecteur natif avec volume, pause et plein écran.
+       La vidéo est servie par un CDN autre que github.io, donc elle s'affiche même si github.io est bloqué chez vous.</p>
+    <pre id="snippet">&lt;video controls playsinline preload="metadata" width="360"
+   style="width:100%;max-width:420px;border-radius:12px;background:#000"
+   poster="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/affiche.jpg"
+   src="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4"&gt;&lt;/video&gt;</pre>
+    <p style="margin-top:10px">Lien de secours (ouvre la vidéo seule, avec les commandes du navigateur) :
+       <code>https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4</code></p>
+  </div>
+
+  <div class="card">
+    <h2>Option 2 — page lecteur autonome dans un cadre (bouton « cliquer pour lire »)</h2>
     <pre id="snippet2">&lt;iframe src="https://lompojerome80-hue.github.io/netprotect-demo/lecteur.html"
         width="360" height="720" frameborder="0" scrolling="no"
         allow="autoplay; fullscreen; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</pre>
-    <p style="margin-top:10px">Alternative balise &lt;video&gt; (si le &lt;iframe&gt; est bloqué) :</p>
-    <pre>&lt;video controls playsinline preload="metadata" width="360"
-       src="https://lompojerome80-hue.github.io/netprotect-demo/video-demo-netprotect.mp4"&gt;&lt;/video&gt;</pre>
-    <p style="margin-top:10px">Lien direct (secours) : <code>https://lompojerome80-hue.github.io/netprotect-demo/lecteur.html</code></p>
+    <p style="margin-top:10px">Variante si github.io est bloqué (le lecteur est servi par le CDN) :
+       le CDN servant le HTML en texte brut, utilisez l'option 1 à la place.</p>
   </div>
 
   <div class="bar">
-    <a class="btn" href="video-demo-netprotect.mp4" download>Télécharger la vidéo (MP4)</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4" download>Télécharger la vidéo (MP4)</a>
     <button class="btn" id="copy">Copier le code d'intégration</button>
     <a class="btn" href="lecteur.html" target="_blank">Ouvrir la page lecteur seule</a>
   </div>
 
   <div class="card">
     <h2>Intégrer cette vidéo sur votre boutique</h2>
-    <p>Copiez ce code dans la description du produit (si la boutique accepte le HTML), ou utilisez simplement le lien de cette page.</p>
-    <pre id="snippet">&lt;iframe src="https://lompojerome80-hue.github.io/netprotect-demo/lecteur.html"
-        width="360" height="720" frameborder="0"
-        allow="autoplay; fullscreen; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</pre>
-    <p style="margin-top:10px">Version simple (lien) : <code>https://lompojerome80-hue.github.io/netprotect-demo/</code></p>
+    <p>Copiez le code de l'option 1 ci-dessus et collez-le dans la description du produit, en mode HTML.
+       Si votre boutique n'accepte pas le HTML, utilisez le lien de secours : la vidéo s'ouvre alors dans le lecteur du navigateur.</p>
+    <p style="margin-top:10px">Version simple (lien) : <code>https://cdn.jsdelivr.net/gh/lompojerome80-hue/netprotect-demo@main/video-demo-netprotect.mp4</code></p>
   </div>
 
   <div class="card">
