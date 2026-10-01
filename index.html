@@ -211,18 +211,22 @@
   .wa-float:hover::after{opacity:1}
   @media(max-width:520px){.wa-float::after{display:none}}
 
-  /* navigation haut / bas */
-  .toUp{position:fixed;left:18px;bottom:18px;z-index:60;width:50px;height:50px;border-radius:50%;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;
+  /* navigation haut / bas : deux fleches independantes */
+  .navv{position:fixed;left:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:6px}
+  .navv button{width:46px;height:42px;border-radius:11px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
     border:1px solid var(--border);background:rgba(12,17,34,.86);color:#dbe2f0;
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    box-shadow:0 8px 26px rgba(0,0,0,.42);transition:opacity .2s ease,transform .2s ease,border-color .2s ease}
-  .toUp:hover{border-color:rgba(77,124,255,.6);color:#fff;transform:translateY(-2px)}
-  .toUp svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .toUp i{font-style:normal;font-size:8.5px;font-weight:700;letter-spacing:.06em;line-height:1}
-  .toUp[hidden]{opacity:0;pointer-events:none;transform:translateY(10px)}
-  .toUp .dn{transform:rotate(180deg)}
-  @media(max-width:520px){.toUp{left:12px;bottom:12px;width:44px;height:44px}}
+    box-shadow:0 8px 26px rgba(0,0,0,.42);
+    transition:opacity .2s ease,transform .2s ease,border-color .2s ease,color .2s ease}
+  .navv button:hover:not([disabled]){border-color:rgba(77,124,255,.6);color:#fff;transform:translateY(-2px)}
+  .navv button:focus-visible{outline:2px solid rgba(77,124,255,.9);outline-offset:2px}
+  .navv button[disabled]{opacity:.3;cursor:default}
+  .navv svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;
+    stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+  @media(max-width:520px){.navv{left:12px;bottom:12px}
+    .navv button{width:42px;height:38px;border-radius:10px}
+    .navv svg{width:18px;height:18px}}
 </style>
 </head>
 <body>
@@ -590,34 +594,57 @@
   </div>
 </footer>
 
-<button class="toUp" id="nav-haut-bas" type="button" aria-label="Navigation haut et bas" title="Haut / bas de la page">
-  <svg class="up" viewBox="0 0 24 24"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg>
-  <i>HAUT</i>
-  <svg class="dn" viewBox="0 0 24 24"><path d="M12 5v13"/><path d="M6 12l6 6 6-6"/></svg>
-</button>
+<div class="navv" id="nav-haut-bas">
+  <button type="button" id="nav-haut" aria-label="Aller en haut de la page" title="Haut de page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg>
+  </button>
+  <button type="button" id="nav-bas" aria-label="Aller en bas de la page" title="Bas de page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v13"/><path d="M6 12l6 6 6-6"/></svg>
+  </button>
+</div>
 
 <script>
 (function () {
-  var b = document.getElementById("nav-haut-bas");
-  if (!b) return;
-  var i = b.querySelector("i");
-  var up = b.querySelector(".up");
-  function milieu() {
-    return (document.documentElement.scrollHeight - window.innerHeight) / 2;
+  var haut = document.getElementById("nav-haut");
+  var bas = document.getElementById("nav-bas");
+  if (!haut || !bas) return;
+
+  var seuil = 8;
+
+  function position() {
+    return window.scrollY || document.documentElement.scrollTop || 0;
   }
+
+  function hauteur() {
+    return Math.max(
+      document.documentElement.scrollHeight,
+      document.body ? document.body.scrollHeight : 0
+    ) - window.innerHeight;
+  }
+
   function maj() {
-    var y = window.scrollY || document.documentElement.scrollTop;
-    var bas = y >= milieu();
-    i.textContent = bas ? "BAS" : "HAUT";
-    up.style.transform = bas ? "rotate(180deg)" : "";
+    var y = position();
+    var max = hauteur();
+    haut.disabled = y <= seuil;
+    bas.disabled = max - y <= seuil;
   }
-  b.addEventListener("click", function () {
-    var y = window.scrollY || document.documentElement.scrollTop;
-    window.scrollTo({ top: (y >= milieu()) ? document.documentElement.scrollHeight : 0,
-                      behavior: "smooth" });
-  });
+
+  function aller(versLeHaut) {
+    var d = versLeHaut ? 0 : hauteur();
+    try {
+      window.scrollTo({ top: d, behavior: "smooth" });
+    } catch (e) {
+      window.scrollTo(0, d);
+    }
+    window.setTimeout(maj, 60);
+    window.setTimeout(maj, 400);
+  }
+
+  haut.addEventListener("click", function () { aller(true); });
+  bas.addEventListener("click", function () { aller(false); });
   window.addEventListener("scroll", maj, { passive: true });
   window.addEventListener("resize", maj);
+  window.addEventListener("load", maj);
   maj();
 })();
 </script>
