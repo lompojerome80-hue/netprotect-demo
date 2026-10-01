@@ -138,12 +138,15 @@ deux opérations décrites ci-dessous, qui n’ont lieu que lorsque vous les dé
   Nous n’y participons pas et n’en recevons rien.
 </div>
 
-<h3>Aucun envoi automatique</h3>
+<h3>Ce qui se déclenche tout seul</h3>
 <p>L’application ne contient ni service de statistiques d’usage, ni rapport de plantage, ni
-publicité, ni notification poussée, ni envoi de télémétrie. Elle ne prélève rien d’autre que ce
-qui est décrit ci-dessus, et elle ne le fait qu’à l’installation, au premier démarrage ou à
-l’activation de la licence. La désinstallation de l’application supprime les données qu’elle
-avait stockées sur l’appareil.</p>
+publicité, ni notification poussée, ni envoi de télémétrie. Aucun de vos données n’est envoyé
+automatiquement.</p>
+<p>En revanche, <strong>un téléchargement est déclenché tout seul</strong> : chaque fois que vous
+activez la protection, l’application vérifie — au plus une fois toutes les 24 heures — si la liste
+de règles a changé, et la récupère si nécessaire. Ce n’est qu’une consultation : elle ne transmet
+rien de vous, et l’adresse du fichier est affichée dans l’écran « Règles ».</p>
+<p>La désinstallation de l’application supprime les données qu’elle avait stockées sur l’appareil.</p>
 
 <h2>5. Durées de conservation</h2>
 <table>
@@ -170,12 +173,17 @@ nous ne faisons ni archive, ni export, ni sauvegarde de votre navigation.</p>
 </ul>
 
 <div class="warn">
-  <strong>Limite que nous preferons indiquer plutôt que masquer.</strong> La liste de règles
-  téléchargée par l’application est vérifiée comme provenant d’une connexion HTTPS, mais elle
-  n’est pas signée numériquement : nous ne pouvons pas prouver cryptographiquement qu’elle
-  provient bien de la source annoncée. Un serveur compromis, ou un dépôt compromis, pourrait
-  nous transmettre une liste modifiée. Nous ne sommes pas en mesure de corriger ce point avec l’architecture actuelle,
-  et nous ne vous demanderons pas de le croire sur parole.
+  <strong>Limite que nous préférons indiquer plutôt que masquer.</strong> La liste de règles
+  téléchargée par l’application est contrôlée : l’adresse doit être en HTTPS, le fichier est
+  refusé s’il contient moins de 20 000 domaines, et la fusion avec vos règles est <strong>strictement
+  additive</strong>. Une source compromise ne peut donc pas <em>désobloquer</em> un site : elle peut au
+  contraire ajouter des blocages à tort.
+  <br /><br />
+  En revanche, la liste téléchargée n’est <strong>pas signée numériquement</strong> : nous ne pouvons
+  pas prouver cryptographiquement qu’elle provient bien de la source annoncée. Le risque résiduel
+  est donc un sur-blocage indu, pas une ouverture. Nous ne sommes pas en mesure de supprimer
+  complètement ce point avec l’architecture actuelle, et nous ne vous demanderons pas de le croire
+  sur parole.
 </div>
 
 <h2>7. Vos droits</h2>
